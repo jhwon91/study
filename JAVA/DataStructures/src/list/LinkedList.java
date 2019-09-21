@@ -19,6 +19,7 @@ public class LinkedList {
 		}
 	}
 	
+	//시작에 데이터 추가
 	public void addFirst(Object input){
 		Node newNode = new Node(input);
 		newNode.next = head;
@@ -29,6 +30,7 @@ public class LinkedList {
 		}
 	}
 	
+	//끝에 데이터 추가
 	public void addLast(Object input){
 		Node newNode =new Node(input);
 		if(size ==0){
@@ -41,6 +43,8 @@ public class LinkedList {
 		}
 	}
 	
+	
+	//특정 위치의 노드를 찾아내는 함수
 	 Node node(int index){
 		Node x = head;
 		for(int i =0 ; i<index;i++){
@@ -49,6 +53,7 @@ public class LinkedList {
 		return x;
 	}
 	
+	 //중간에 노드 추가
 	 public void add(int k, Object input){
 		 if(k==0){
 			 addFirst(input);
@@ -65,5 +70,63 @@ public class LinkedList {
 			 }
 		 }
 	 }
-	
+	 
+	 //출력
+	 public String toString() {
+		 if(head == null) {
+			 return "[ ]";
+		 }
+		 Node temp = head;
+		 String str="[";
+		 
+		 while(temp.next != null) {
+			 str += temp.data + "," ;
+			 temp = temp.next;
+		 }
+		 
+		 str += temp.data;
+		 return str+"]";
+	 }
+	 
+	 //첫번째 노드 삭제
+	 public Object removeFirst() {
+		 Node temp = head;
+		 head = head.next;
+		 Object returnData = temp.data;
+		 temp = null;
+		 size--;
+		 return returnData;
+	 }
+	 
+	 //중간 데이터 삭제
+	 public Object remove(int k) {
+		 if(k == 0) 
+			 return removeFirst();
+		 Node temp = node(k-1);
+		 Node todoDeleted = temp.next;
+		 temp.next = temp.next.next;
+		 Object returnData = todoDeleted.data;
+		 if(todoDeleted == tail) {
+			 tail = temp;
+		 }
+		 todoDeleted =  null;
+		 size--;
+		 return returnData;
+	 }
+	 
+	 //마지막 데이터 삭제
+	 public Object removeLast() {
+		 return remove(size-1);
+	 }
+	 
+	 //엘리먼트 크기
+	 public int size() {
+		 return size;
+	 }
+	 
+	 //엘리먼트 가져오기
+	 public Object get(int k) {
+		 Node temp = node(k);
+		 return temp.data;
+	 }
 }

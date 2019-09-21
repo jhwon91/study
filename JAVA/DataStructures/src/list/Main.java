@@ -10,5 +10,13 @@ public class Main {
 	  numbers.addLast(40);
 	  //System.out.println(numbers.node(0));
 	  numbers.add(1, 15);
+	  numbers.add(3, 25);
+	 // System.out.println(numbers.removeFirst());
+	 // System.out.println(numbers.remove(1)); 
+	  System.out.println(numbers.removeLast());
+	  System.out.println(numbers);
+	  System.out.println(numbers.size());
+	  System.out.println(numbers.get(2));
+	  
   }
 }
