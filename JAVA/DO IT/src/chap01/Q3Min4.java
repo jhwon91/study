@@ -16,5 +16,6 @@ public class Q3Min4 {
 		System.out.println("min4(2,5,3,1) = "+min4(2,5,3,1));
 		System.out.println("min4(2,5,9,8) = "+min4(2,5,9,8));
 		System.out.println("min4(9,7,4,1) = "+min4(9,7,4,1));
+		
 	}
 }
