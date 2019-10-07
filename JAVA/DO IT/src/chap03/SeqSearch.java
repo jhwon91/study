@@ -22,17 +22,18 @@ public class SeqSearch {
 	
 	//보초법
 	static int seqSearchSen(int[] a, int n, int key) {
-		int i = 0;
-		
+		int i=0;
 		a[n] =key;   //보초 추가
+		for (i = 0; a[i] != key; i++);
+		return i == n ? -1 : i;
 		
-		while(true) {
+		/*while(true) {
 			if(a[i] == key) {
 				break;
 			}
 			i++;
 		}
-		return i==n? -1 : i;
+		return i==n? -1 : i;*/
 	}
 	
 	public static void main(String[] args) {
