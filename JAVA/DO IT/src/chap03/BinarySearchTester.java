@@ -27,7 +27,7 @@ public class BinarySearchTester {
 		int ky = stdIn.nextInt();
 		
 		int idx = Arrays.binarySearch(x, ky);
-		
+		 
 		if(idx<0){
 			System.out.println("그 값의 요소가 없습니다."+idx);
 		}else{
